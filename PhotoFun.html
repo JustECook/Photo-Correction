@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Fun</title>
+
+    <style>
+        :root {
+            --rotation: 0deg;
+            --borderThick: 2px;
+            --borderRadius: 0%;
+        }
+
+        .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            width: 100vw;
+        }
+
+        img {
+            height: 300px;
+            width: auto;
+            transform: rotate(var(--rotation));
+            border: var(--borderThick);
+            border-radius: var(--borderRadius);
+        }
+    </style> 
+
+
+</head>
+<body>
+    <div class = "description"><h1>Use the controls to tweak the photo</h1></div>
+    <div class = "controls">
+        <label for = "rotate">Rotate</label>
+        <input type = "range" name = "rotate" min = "0" max = "360" value = "0">
+        <label for = "thick">Border Thickness</label>
+        <input type = "range" name = "thick" min = "2" max = "10" value = "2">
+        <label for = "bRadius">Border Radius</label>
+        <input type = "range" name = "bRadius" min = "0" max = "50" value = "0">
+    </div>
+    <div class = "image">
+        <img src = "images/batmanLogo.png">
+    </div>
+
+    <script>
+        let sliders = document.querySelectorAll(".controls input");
+
+        function pictureUpdate() {
+            document.documentElement.style.setProperty(`--${this.name}`, `this.value`);
+        }
+
+        sliders.forEach(input => input.addEventListener("change", pictureUpdate));
+
+    </script>    
+    
+</body>
+</html>
