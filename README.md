@@ -11,3 +11,5 @@ Future updates:
 1. Add button that rotates image 90 degrees with each click
 2. Add function to upload user's own image.
 3. Add more aesthetics to application.
+
+Suggestions for improvement are always welcome.
