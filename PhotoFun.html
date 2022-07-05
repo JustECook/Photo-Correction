@@ -38,6 +38,8 @@
         <label for = "rotate">Rotate:</label>
         <input id = "rotate" type = "range" name = "rotate" min = "0" max = "360" value = "0" data-sizing = "deg">
 
+        <button class = "rotate90">90 Degrees</button>
+
         <label for = "borderThick">Border Thickness:</label>
         <input id = "borderThick" type = "range" name = "borderThick" min = "2" max = "10" value = "2" data-sizing = "px">
 
@@ -48,16 +50,25 @@
         <img src = "images/NorthernLights.jpg">
     </div>
 
+
     <script>
         let inputs = document.querySelectorAll(".controls input");
+        let rotate90 = document.querySelector(".rotate90");
 
         function pictureUpdate() {
             let suffix = this.dataset.sizing || "";
             document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
         }
 
+        let rotateButton = 0;
+        function pictureRotate() {
+           rotateButton += 90;
+           rotate90.style.transform = rotate(rotateButton + "deg");
+        }
+
         inputs.forEach(input => input.addEventListener("change", pictureUpdate));
         inputs.forEach(input => input.addEventListener("mouseover", pictureUpdate));
+        rotate90.addEventListener("click", pictureRotate);
 
     </script>    
     

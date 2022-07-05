@@ -8,7 +8,7 @@ Added sliders and image to be altered by sliders. Border Thickness and radius wi
 NorthernLights.jpg is the sample photo used to test functionality.
 
 Future updates:
-1. Add button that rotates image 90 degrees with each click
+1. Add button that rotates image 90 degrees with each click -- Added button but does not work yet
 2. Add function to upload user's own image.
 3. Add more aesthetics to application.
 
